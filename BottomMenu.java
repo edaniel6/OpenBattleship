@@ -8,21 +8,14 @@ import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.Point;
 
-/**
- * Creates a panel for displaying gameplay information.  Extends the JPanel class.
- */
 
 public class BottomMenu extends JPanel
 {
-    /** integer represenging the number of guesses made*/
     int numberOfGuesses = 0;
     
-    /** JLabel containing the integer numberOfGuesses*/
     JLabel guesses;
 
-    /**
-     * Class Constructor.
-     */
+
     
     public BottomMenu()
     {        
@@ -32,13 +25,7 @@ public class BottomMenu extends JPanel
         guesses.setForeground(Color.red);
         add(guesses);       
     }
-    
-    /**
-     * Paints the panel with the necessary information
-     * 
-     * @param   g   the graphics instance to be painted
-     */
-    
+
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
