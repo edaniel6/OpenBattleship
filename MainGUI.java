@@ -13,43 +13,26 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-/**
- * Simulates solitaire play of the game Battleship.  Try to locate all parts of all 5 enemy ships.
- * Extends the JFrame class.
- * 
- * @author  Spencer DeBuf
- * @version 1.0 
- */
+
+
 
 public class MainGUI extends JFrame
 {    
-    /** SquarePanel array representing the playing grid of 8 rows by 8 columns*/
 	BoardCell panel[][] = new BoardCell[8][8];
-    
-    /** Jbutton array representing the 64 possible guesses*/
+
     JButton button[][] = new JButton[8][8];
-    
-    /** InfoPanel to display gameplay information*/
     BottomMenu info;
     
-    /** JFrame containing a question dialog displayed at the end of a game*/
     JFrame playAgain;
     
-    /** Color representing the default color of each JButton*/
     Color defaultColor;
-    
-    /** Integer representing the number of guesses made*/
+
     int guesses = 0;
     
-    /** Static Integer representing the length of the ship, used in the placement of the ships*/
     static int length;    
     
-    /** Array of Integers used for storing the locations of the ships*/
+
     static int board[][] = new int[8][8]; 
-    
-    /**
-     * Clears the play area for a new game.
-     */
     
     public void eraseBoard()
     {
@@ -66,9 +49,6 @@ public class MainGUI extends JFrame
         info.guesses.setText("Guesses: " + guesses);//displays the number of guesses
     }
     
-    /**
-     * Displays a new JFrame asking the user if they wish to play another game.
-     */
     
     public void checkForPlayAgain()
     {
