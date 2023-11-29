@@ -3,16 +3,10 @@ import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.Graphics;
 
-/**
- * Creates a new JPanel that will be placed on each possible guess position
- */
 
 public class BoardCell extends JPanel
 {
     
-    /**
-     * Class Constructor
-     */
     
     public BoardCell()
     {
@@ -20,11 +14,6 @@ public class BoardCell extends JPanel
         setBackground(Color.white);      
     }
     
-    /**
-     * Paints the Panel.
-     * 
-     * @param   g   the Graphics instance to be painted
-     */
     
     public void paintComponent(Graphics g)
     {
