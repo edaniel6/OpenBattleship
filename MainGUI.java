@@ -68,9 +68,7 @@ public class MainGUI extends JFrame
         playAgain.pack();       
     }        
     
-    /**
-     * Class Constructor.  Displays the playing field on the JFrame
-     */
+
     
     public MainGUI()
     {
@@ -82,7 +80,6 @@ public class MainGUI extends JFrame
         setTitle("Battleship"); 
         setResizable(false);
         
-        //populates the board with panels with JButtons on them
         for (int r = 0; r < 8; r++)
         {
             for (int c = 0; c < 8; c++)
@@ -103,21 +100,14 @@ public class MainGUI extends JFrame
         pack();      
     } 
     
-    /**
-     * Class to be called when the buttons are pressed.  Implements ActionListener Interface.
-     */
+
     
     public class ButtonPressed implements ActionListener
     {   
-        int r;//integer to store the value of which row the button that was pressed is in
-        int c;//integer to store the value of which column the button that was presses is in
+        int r;
+        int c;
         
-        /**
-         * Class Constructor.
-         * 
-         * @param   row which row the button pressed resides in
-         * @param   column  which column the butotn pressed resides in
-         */
+ 
         
         public ButtonPressed(int row, int column)
         {
@@ -133,28 +123,24 @@ public class MainGUI extends JFrame
         
         public void actionPerformed(ActionEvent evt)
         {
-            //if the guess was a miss            
             if (board[r][c] == 0)
             {
                 button[r][c].setBackground(Color.black);
                 board[r][c] = 0;
             }
             
-            //if the guess hit a minesweeper
             if (board[r][c] == 2)
             {
                 button[r][c].setBackground(Color.green);
                 board[r][c] = -1;
             }
             
-            //if the guess hit a frigate
             if (board[r][c] == 3)
             {
                 button[r][c].setBackground(Color.blue);
                 board[r][c] = -1;
             }
             
-            //if the guess hit a cruiser
             if (board[r][c] == 4)
             {
                 button[r][c].setBackground(Color.red);
