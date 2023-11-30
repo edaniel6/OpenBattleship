@@ -1,16 +1,11 @@
-
-//main method and calls methods to initialize the game
+//main method and method calls to initialize the game
 public class GameMode{
 
-    //the length of the longest ship*/
+    //the length of the longest ship
     final static int BATTLESHIP = 5;    
     
-    /**
-     * Main method, initializes the game.
-     * 
-     * @param   args    array of strings
-     */
-    
+    //main method, initializes the game
+
     public static void main (String args[])
     {        
     	MainGUI gameBoard = new MainGUI();       
