@@ -7,7 +7,12 @@ import java.awt.Graphics;
 public class BoardCell extends JPanel
 {
     
-    //Class Constructor
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	//class Constructor
     public BoardCell()
     {
         setPreferredSize(new Dimension(50,50));
@@ -15,10 +20,10 @@ public class BoardCell extends JPanel
     }
     
     //Paint the panel.
-    public void paintComponent(Graphics g)
+    public void paintComponent(Graphics graphics)
     {
-        super.paintComponent(g);
-        g.setColor(Color.black);
-        g.drawRect(0,0,49,49);   
+        super.paintComponent(graphics);
+        graphics.setColor(Color.black);
+        graphics.drawRect(0,0,49,49);   
     }  
 }
