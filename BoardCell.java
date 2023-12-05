@@ -6,20 +6,16 @@ import java.awt.Graphics;
 //JPanel that will be placed on each possible guess position
 public class BoardCell extends JPanel
 {
-    
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	//class Constructor
+    //constructor
     public BoardCell()
     {
         setPreferredSize(new Dimension(50,50));
         setBackground(Color.black);      
     }
     
-    //Paint the panel.
+    //draw the panel
     public void paintComponent(Graphics graphics)
     {
         super.paintComponent(graphics);
