@@ -12,10 +12,10 @@ import java.awt.event.ActionEvent;
 public class MainGUI extends JFrame
 {    
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	// array representing the playing grid of 8 rows by 8 columns
-	BoardCell panel[][] = new BoardCell[8][8];
+    // array that stores the grid for the board 
+    BoardCell panel[][] = new BoardCell[8][8];
     
     // array representing all possible guesses
     JButton button[][] = new JButton[8][8];
@@ -26,10 +26,10 @@ public class MainGUI extends JFrame
     //question dialog displayed at the end of a game
     JFrame playAgain;
     
-    //Color representing the default color of each button
+    //color representing the default color of each button
     Color defaultColor;
     
-    //Integer representing the number of guesses made
+    //number of guesses made
     int guesses = 0;
     
     //length of the ship
@@ -38,7 +38,7 @@ public class MainGUI extends JFrame
     //array of integers used to store locations of the ships
     static int board[][] = new int[8][8]; 
     
-    // Clears the play area for a new game.
+    // clears the play area for a new game
     public void eraseBoard()
     {
         guesses = 0;
@@ -46,8 +46,10 @@ public class MainGUI extends JFrame
         {
             for (int y1 = 0; y1 < 8; y1++)
             {
-                board[x1][y1] = 0;  //erases the placement of the ships
-                button[x1][y1].setBackground(defaultColor);//sets the buttons to their default color
+		//erase the placement of the ships
+                board[x1][y1] = 0;  
+		//set the buttons to their default color
+                button[x1][y1].setBackground(defaultColor);
             }            
         }
         
@@ -74,7 +76,6 @@ public class MainGUI extends JFrame
     }        
     
     //class Constructor
-
     public MainGUI()
     {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -85,7 +86,7 @@ public class MainGUI extends JFrame
         setTitle("Battleship"); 
         setResizable(false);
         
-        //populates the board with panels with JButtons on them
+        //populate the board with panels with JButtons on them
         for (int r = 0; r < 8; r++)
         {
             for (int c = 0; c < 8; c++)
@@ -102,11 +103,11 @@ public class MainGUI extends JFrame
         
         defaultColor = button[1][1].getBackground();//set the default Color of the JButtons        
         info = new BottomMenu();           
-        add(info);//adds the InfoPanel to the bottom of the JFrame        
+        add(info);//add the InfoPanel to the bottom of the JFrame        
         pack();      
     } 
     
-    //Class to be called when the buttons are pressed
+    //class to be called when the buttons are pressed
     public class ButtonPressed implements ActionListener
     {   
         int r;//integer to store the value of which row the button that was pressed is in
@@ -119,7 +120,7 @@ public class MainGUI extends JFrame
             c = column;
         }
         
-        //Checks if the guess was a hit or miss.  Displays the result on the JFrame.
+        //check if the guess was a hit or miss, display the result on the JFrame
      
         public void actionPerformed(ActionEvent evt)
         {
@@ -130,28 +131,28 @@ public class MainGUI extends JFrame
                 board[r][c] = 0;
             }
             
-            //mine sweeper hit
+            //patrol board hit
             if (board[r][c] == 2)
             {
                 button[r][c].setBackground(Color.green);
                 board[r][c] = -1;
             }
             
-            //frigate hit
+            //submarine hit
             if (board[r][c] == 3)
             {
                 button[r][c].setBackground(Color.blue);
                 board[r][c] = -1;
             }
             
-            //cruiser hit
+            //battleship hit
             if (board[r][c] == 4)
             {
                 button[r][c].setBackground(Color.red);
                 board[r][c] = -1;
             }
             
-            //battleship hit
+            //carrier hit
             if (board[r][c] == 5)
             {
                 button[r][c].setBackground(Color.yellow);
