@@ -1,7 +1,6 @@
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Dimension;
@@ -11,9 +10,7 @@ import java.awt.Color;
 
 public class BottomMenu extends JPanel
 {
-    /**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	//number of guesses made
