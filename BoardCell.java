@@ -6,9 +6,9 @@ import java.awt.Graphics;
 //JPanel that will be placed on each possible guess position
 public class BoardCell extends JPanel
 {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    //constructor
+	//constructor
     public BoardCell()
     {
         setPreferredSize(new Dimension(50,50));
