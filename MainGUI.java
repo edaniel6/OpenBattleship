@@ -11,7 +11,10 @@ import java.awt.event.ActionEvent;
 
 public class MainGUI extends JFrame
 {    
-    // array representing the playing grid of 8 rows by 8 columns
+
+	private static final long serialVersionUID = 1L;
+
+	// array representing the playing grid of 8 rows by 8 columns
 	BoardCell panel[][] = new BoardCell[8][8];
     
     // array representing all possible guesses
@@ -158,7 +161,7 @@ public class MainGUI extends JFrame
             guesses++;
             info.guesses.setText("Guesses: " + guesses);     
             
-            if (checkForGameOver())
+            if (isGameOver())
             {
             	playAgain();
             }           
@@ -185,16 +188,15 @@ public class MainGUI extends JFrame
             eraseBoard();
             for (int i = 2; i <= 5; i++)
             {
-                populateBoard(i);
+            	drawBoard(i);
             }
             
             playAgain.setVisible(false);//hides the window asking the user to play again           
         }
     }
     
-    //Checks if all of the ships have been hit.
-
-    public boolean checkForGameOver()
+    //checks if all of the ships have been hit
+    public boolean isGameOver()
     {
         for (int row = 0; row < 8; row++)
         {
@@ -210,8 +212,8 @@ public class MainGUI extends JFrame
         return true;
     }
     
-    //fill the board randomly with the 4 ships.
-    public static void populateBoard(int lengthOfShip)
+    //fill the board randomly with the 4 ships
+    public static void drawBoard(int lengthOfShip)
     {
         //randomly placing the ships
         Random random = new Random();
