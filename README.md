@@ -11,7 +11,7 @@ INSTALLATION
 
 Windows:
 Download the .jar under the releases page.
-Download Java JDK 21.0.1 or higher and the latest version of Java SE.
+Download Java JDK 17 or higher and the latest version of Java SE.
 Simply double click the .jar and it will let you play
 
 Linux:
